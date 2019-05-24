@@ -54,10 +54,10 @@ function draw() {
   ball.pos.y += ball.vel.y
 
   line(old.pos.x, old.pos.y, ball.pos.x, ball.pos.y)
-  
+
   old = ball
 }
 
 function mousePressed() {
-  socket.emit('newBall', {x: mouseX, y: mouseY})
+  socket.emit('newBall', {x: mouseX - selfTranslate, y: mouseY})
 }

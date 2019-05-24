@@ -1,7 +1,11 @@
 {
   "name": "multiscreen",
   "version": "1.0.0",
+  "author": "m0wh <malo.dewiderspach@gmail.com>",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.0",

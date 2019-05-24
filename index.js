@@ -23,6 +23,13 @@ io.on('connection', socket => {
     minHeight = Math.min(...devices.map(d => d.height))
   })
 
+  socket.on('newBall', mousePos => {
+    ball = {
+      pos: mousePos,
+      vel: {x: (Math.random()-.5) * 20, y: (Math.random()-.5) * 20},
+    }
+  })
+
   socket.on('disconnect', () => {
     devices = devices.filter(d => d.id !== socket.id)
     io.emit('devicesChanged', devices)
